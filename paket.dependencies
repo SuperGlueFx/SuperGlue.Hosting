@@ -1,4 +1,7 @@
 source https://www.nuget.org/api/v2
 source https://www.myget.org/F/jajo/api/v2
+nuget Fos
+nuget Microsoft.Owin
 nuget Microsoft.Owin.SelfHost
+nuget Owin
 nuget SuperGlue.Configuration

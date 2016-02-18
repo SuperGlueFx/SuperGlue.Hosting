@@ -1,0 +1,11 @@
+﻿type file
+id SuperGlue.Hosting.FastCgi
+version 1.0
+authors Mattias Jakobsson
+description
+        SuperGlue FastCgi host
+files
+    bin/Release/**/*.dll ==> content/Hosts/fastcgi
+	!bin/Release/SuperGlue.Configuration.dll
+dependencies
+	SuperGlue.Configuration

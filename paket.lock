@@ -1,6 +1,9 @@
 NUGET
   remote: https://www.nuget.org/api/v2
   specs:
+    FastCgiNet (0.1.0)
+    Fos (0.1.0)
+      FastCgiNet (>= 0.1.0)
     Microsoft.Owin (3.0.1)
       Owin (>= 1.0)
     Microsoft.Owin.Diagnostics (3.0.1)
