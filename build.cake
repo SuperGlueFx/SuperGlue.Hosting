@@ -95,19 +95,11 @@ Task("PaketPush")
 		}
 	});
 
-Task("Test")
-	.IsDependentOn("Build")
-	.Does(() => {
-		Fixie("**/*.Tests/bin/" + configuration + "/*.Tests.dll", new FixieSettings {
-			TeamCity = true
-		});
-	});
-
 Task("Default")
     .IsDependentOn("Build");
 
 Task("ci")
-	.IsDependentOn("Test")
+	.IsDependentOn("Build")
 	.IsDependentOn("PaketPush")
 	.Does(() => {
 		if(TeamCity.IsRunningOnTeamCity)
