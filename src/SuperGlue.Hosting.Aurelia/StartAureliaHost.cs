@@ -15,7 +15,7 @@ namespace SuperGlue.Hosting.Aurelia
         private Process _process;
         private bool _shouldBeStarted;
 
-        public Task Start(AppFunc chain, IDictionary<string, object> settings, string environment)
+        public Task Start(AppFunc chain, IDictionary<string, object> settings, string environment, string[] arguments)
         {
             var aureliaSettings = settings.GetSettings<AureliaSettings>();
 
@@ -59,6 +59,8 @@ namespace SuperGlue.Hosting.Aurelia
         {
             return x => Task.CompletedTask;
         }
+
+        public string Name => "aurelia";
 
         public string Chain => "chains.Aurelia";
 

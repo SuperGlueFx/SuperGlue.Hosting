@@ -16,7 +16,7 @@ namespace SuperGlue.Hosting.FastCgi
 
         public string Chain => "chains.Web";
 
-        public Task Start(AppFunc chain, IDictionary<string, object> settings, string environment)
+        public Task Start(AppFunc chain, IDictionary<string, object> settings, string environment, string[] arguments)
         {
             _webServer = new FosSelfHost(x => x.Use<RunAppFunc>(new RunAppFuncOptions(chain)));
 
@@ -43,5 +43,7 @@ namespace SuperGlue.Hosting.FastCgi
         {
             return null;
         }
+
+        public string Name => "fastcgi";
     }
 }

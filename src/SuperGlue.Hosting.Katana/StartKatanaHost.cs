@@ -15,7 +15,7 @@ namespace SuperGlue.Hosting.Katana
 
         public string Chain => "chains.Web";
 
-        public Task Start(AppFunc chain, IDictionary<string, object> settings, string environment)
+        public Task Start(AppFunc chain, IDictionary<string, object> settings, string environment, string[] arguments)
         {
             settings.Log("Starting katana host for environment: \"{0}\"", LogLevel.Debug, environment);
 
@@ -45,5 +45,7 @@ namespace SuperGlue.Hosting.Katana
         {
             return null;
         }
+
+        public string Name => "katana";
     }
 }
