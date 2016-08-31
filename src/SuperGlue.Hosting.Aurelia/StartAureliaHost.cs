@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Management;
+using System.Reflection;
 using System.Threading.Tasks;
 using SuperGlue.Configuration;
 
@@ -17,13 +19,13 @@ namespace SuperGlue.Hosting.Aurelia
 
         public Task Start(AppFunc chain, IDictionary<string, object> settings, string environment, string[] arguments)
         {
-            var aureliaSettings = settings.GetSettings<AureliaSettings>();
+            var location = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "app");
 
             var startInfo = new ProcessStartInfo("cmd.exe")
             {
                 CreateNoWindow = true,
                 WindowStyle = ProcessWindowStyle.Hidden,
-                WorkingDirectory = aureliaSettings.Location,
+                WorkingDirectory = location,
                 UseShellExecute = false,
                 RedirectStandardError = true,
                 RedirectStandardInput = true,
@@ -38,11 +40,11 @@ namespace SuperGlue.Hosting.Aurelia
 
             _process.OutputDataReceived += (x, y) => Console.WriteLine(y.Data);
 
-            _process.Exited += async (x, y) => await StartProcess(aureliaSettings).ConfigureAwait(false);
+            _process.Exited += async (x, y) => await StartProcess(arguments).ConfigureAwait(false);
 
             _shouldBeStarted = true;
 
-            return StartProcess(aureliaSettings);
+            return StartProcess(arguments);
         }
 
         public Task ShutDown(IDictionary<string, object> settings)
@@ -64,12 +66,12 @@ namespace SuperGlue.Hosting.Aurelia
 
         public string Chain => "chains.Aurelia";
 
-        private async Task StartProcess(AureliaSettings settings)
+        private async Task StartProcess(string[] arguments)
         {
             if (!_shouldBeStarted || !_process.Start())
                 return;
 
-            await _process.StandardInput.WriteAsync($"au {settings.Command} {settings.GetFlags()}").ConfigureAwait(false);
+            await _process.StandardInput.WriteAsync($"au {string.Join(" ", arguments)}").ConfigureAwait(false);
 
             _process.BeginOutputReadLine();
         }
