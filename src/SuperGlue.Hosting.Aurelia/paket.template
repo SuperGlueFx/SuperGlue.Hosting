@@ -1,0 +1,11 @@
+﻿type file
+id SuperGlue.Hosting.Aurelia
+version 1.0
+authors Mattias Jakobsson
+description
+        SuperGlue Aurelia host
+files
+    bin/Release/**/*.dll ==> content/Hosts/aurelia
+	!bin/Release/SuperGlue.Configuration.dll
+dependencies
+	SuperGlue.Configuration

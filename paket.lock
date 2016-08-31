@@ -259,5 +259,5 @@ NUGET
       System.Xml.ReaderWriter (>= 4.0.11) - framework: dnxcore50, netstandard10, >= netstandard13
   remote: https://www.myget.org/F/jajo/api/v2
   specs:
-    SuperGlue.Configuration (1.0.0.357)
+    SuperGlue.Configuration (1.0.0.359)
       Newtonsoft.Json
