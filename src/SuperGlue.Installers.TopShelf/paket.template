@@ -1,0 +1,10 @@
+﻿type file
+id SuperGlue.Installers.TopShelf
+version 1.0
+authors Mattias Jakobsson
+description
+        SuperGlue topshelf installer
+files
+    bin/Release/**/*.dll ==> content/Installers/topshelf
+	bin/Release/**/*.exe ==> content/Installers/topshelf
+	!bin/Release/SuperGlue.Configuration.dll

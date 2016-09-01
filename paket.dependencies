@@ -5,3 +5,4 @@ nuget Microsoft.Owin
 nuget Microsoft.Owin.SelfHost
 nuget Owin
 nuget SuperGlue.Configuration
+nuget TopShelf

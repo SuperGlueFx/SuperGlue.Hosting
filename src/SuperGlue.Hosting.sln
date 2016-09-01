@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperGlue.Hosting.FastCgi",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperGlue.Hosting.Aurelia", "SuperGlue.Hosting.Aurelia\SuperGlue.Hosting.Aurelia.csproj", "{3275AD5A-2D35-42AC-8E78-5D8DC1420823}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperGlue.Installers.TopShelf", "SuperGlue.Installers.TopShelf\SuperGlue.Installers.TopShelf.csproj", "{5BAFA805-BACF-471E-8354-6111981DB2BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{3275AD5A-2D35-42AC-8E78-5D8DC1420823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3275AD5A-2D35-42AC-8E78-5D8DC1420823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3275AD5A-2D35-42AC-8E78-5D8DC1420823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BAFA805-BACF-471E-8354-6111981DB2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BAFA805-BACF-471E-8354-6111981DB2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BAFA805-BACF-471E-8354-6111981DB2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BAFA805-BACF-471E-8354-6111981DB2BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
