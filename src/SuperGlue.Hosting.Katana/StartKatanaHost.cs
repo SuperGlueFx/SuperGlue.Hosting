@@ -20,12 +20,11 @@ namespace SuperGlue.Hosting.Katana
             settings.Log("Starting katana host for environment: \"{0}\"", LogLevel.Debug, environment);
 
             var katanaSettings = settings.GetSettings<KatanaSettings>();
-            var bindings = katanaSettings.GetBindings();
 
-            var startOptions = new StartOptions();
-
-            foreach (var binding in bindings)
-                startOptions.Urls.Add(binding);
+            var startOptions = new StartOptions
+            {
+                Port = katanaSettings.GetPort()
+            };
 
             _webApp = WebApp.Start(startOptions, x => x.Use<RunAppFunc>(new RunAppFuncOptions(chain)));
 

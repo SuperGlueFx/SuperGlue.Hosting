@@ -15,10 +15,18 @@ namespace SuperGlue.Hosting.Katana
             {
                 environment.AlterSettings<KatanaSettings>(x =>
                 {
-                    x.FallbackTo($"http://localhost:{GetRandomUnusedPort()}");
+                    x.BindTo(GetRandomUnusedPort());
                 });
 
-                environment[WebHostExtensions.WebHostConstants.Bindings] = (Func<IEnumerable<string>>)(() => environment.GetSettings<KatanaSettings>().GetBindings());
+                environment[WebHostExtensions.WebHostConstants.Bindings] = (Func<IEnumerable<string>>)(() =>
+                {
+                    var port = environment.GetSettings<KatanaSettings>().GetPort();
+
+                    return new List<string>
+                    {
+                        $"http://localhost:{port}"
+                    };
+                });
 
                 return Task.CompletedTask;
             });
