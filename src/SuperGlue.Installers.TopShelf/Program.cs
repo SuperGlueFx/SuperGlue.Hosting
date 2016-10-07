@@ -10,12 +10,6 @@ namespace SuperGlue.Installers.TopShelf
 
             HostFactory.Run(x =>
             {
-                x.AddCommandLineDefinition("appname", y =>
-                {
-                    x.SetServiceName(y);
-                    x.SetDisplayName(y);
-                });
-
                 x.AddCommandLineDefinition("environment", y => environment = y);
 
                 x.ApplyCommandLine(string.Join(" ", args));
