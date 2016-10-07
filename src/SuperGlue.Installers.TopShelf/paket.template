@@ -8,3 +8,4 @@ files
     bin/Release/**/*.dll ==> content/Installers/topshelf
 	bin/Release/**/*.exe ==> content/Installers/topshelf
 	!bin/Release/SuperGlue.Configuration.dll
+	bin/Release/IncludeHostFiles.targets ==> build
