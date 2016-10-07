@@ -21,10 +21,9 @@ namespace SuperGlue.Hosting.Katana
 
             var katanaSettings = settings.GetSettings<KatanaSettings>();
 
-            var startOptions = new StartOptions
-            {
-                Port = katanaSettings.GetPort()
-            };
+            var startOptions = new StartOptions();
+
+            startOptions.Urls.Add($"http://*:{katanaSettings.GetPort()}");
 
             _webApp = WebApp.Start(startOptions, x => x.Use<RunAppFunc>(new RunAppFuncOptions(chain)));
 
