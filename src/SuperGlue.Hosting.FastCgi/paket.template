@@ -5,8 +5,8 @@ authors Mattias Jakobsson
 description
         SuperGlue FastCgi host
 files
-    bin/Release/**/*.dll ==> build/Hosts/fastcgi
+    bin/Release/**/*.dll ==> content/Hosts/fastcgi
 	!bin/Release/SuperGlue.Configuration.dll
-	bin/Release/IncludeHostFiles.targets ==> build
+	bin/Release/IncludeHostFiles.targets ==> content
 dependencies
 	SuperGlue.Configuration

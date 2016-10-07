@@ -5,8 +5,8 @@ authors Mattias Jakobsson
 description
         SuperGlue topshelf installer
 files
-    bin/Release/**/*.dll ==> build/Installers/topshelf
-	bin/Release/**/*.exe ==> build/Installers/topshelf
-	bin/Release/SuperGlue.Installers.TopShelf.exe.ignore ==> build/Installers/topshelf
+    bin/Release/**/*.dll ==> content/Installers/topshelf
+	bin/Release/**/*.exe ==> content/Installers/topshelf
+	bin/Release/SuperGlue.Installers.TopShelf.exe.ignore ==> content/Installers/topshelf
 	!bin/Release/SuperGlue.Configuration.dll
-	bin/Release/IncludeHostFiles.targets ==> build
+	bin/Release/IncludeHostFiles.targets ==> content
