@@ -1,4 +1,5 @@
-﻿using Topshelf;
+﻿using System.Configuration;
+using Topshelf;
 
 namespace SuperGlue.Installers.TopShelf
 {
@@ -6,14 +7,10 @@ namespace SuperGlue.Installers.TopShelf
     {
         static void Main(string[] args)
         {
-            var environment = "local";
+            var environment = ConfigurationManager.AppSettings["App.Environment"];
 
             HostFactory.Run(x =>
             {
-                x.AddCommandLineDefinition("environment", y => environment = y);
-
-                x.ApplyCommandLine(string.Join(" ", args));
-
                 x.Service<SuperGlueApplication>(s =>
                 {
                     s.ConstructUsing(name => new SuperGlueApplication(environment));
