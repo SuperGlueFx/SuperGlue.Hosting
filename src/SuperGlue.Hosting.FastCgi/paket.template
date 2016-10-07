@@ -7,6 +7,5 @@ description
 files
     bin/Release/**/*.dll ==> content/Hosts/fastcgi
 	!bin/Release/SuperGlue.Configuration.dll
-	bin/Release/IncludeHostFiles.targets ==> content
 dependencies
 	SuperGlue.Configuration

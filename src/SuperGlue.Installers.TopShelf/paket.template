@@ -9,4 +9,3 @@ files
 	bin/Release/**/*.exe ==> content/Installers/topshelf
 	bin/Release/SuperGlue.Installers.TopShelf.exe.ignore ==> content/Installers/topshelf
 	!bin/Release/SuperGlue.Configuration.dll
-	bin/Release/IncludeHostFiles.targets ==> content

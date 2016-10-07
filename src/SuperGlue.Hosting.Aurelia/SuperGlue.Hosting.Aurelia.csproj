@@ -48,9 +48,6 @@
     <Compile Include="StartAureliaHost.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="IncludeHostFiles.targets">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="paket.references" />
     <None Include="paket.template" />
   </ItemGroup>
