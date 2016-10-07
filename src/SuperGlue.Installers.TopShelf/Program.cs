@@ -12,8 +12,8 @@ namespace SuperGlue.Installers.TopShelf
             {
                 x.AddCommandLineDefinition("appname", y =>
                 {
-                    x.SetInstanceName(y);
                     x.SetServiceName(y);
+                    x.SetDisplayName(y);
                 });
 
                 x.AddCommandLineDefinition("environment", y => environment = y);

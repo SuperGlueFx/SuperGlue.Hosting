@@ -21,7 +21,7 @@ namespace SuperGlue.Hosting.Aurelia
         {
             var location = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "app");
 
-            var startInfo = new ProcessStartInfo("cmd.exe")
+            var startInfo = new ProcessStartInfo("cmd.exe", $"/C au {string.Join(" ", arguments)}")
             {
                 CreateNoWindow = true,
                 WindowStyle = ProcessWindowStyle.Hidden,
@@ -40,11 +40,11 @@ namespace SuperGlue.Hosting.Aurelia
 
             _process.OutputDataReceived += (x, y) => Console.WriteLine(y.Data);
 
-            _process.Exited += async (x, y) => await StartProcess(arguments).ConfigureAwait(false);
+            _process.Exited += async (x, y) => await StartProcess().ConfigureAwait(false);
 
             _shouldBeStarted = true;
 
-            return StartProcess(arguments);
+            return StartProcess();
         }
 
         public Task ShutDown(IDictionary<string, object> settings)
@@ -66,14 +66,14 @@ namespace SuperGlue.Hosting.Aurelia
 
         public string Chain => "chains.Aurelia";
 
-        private async Task StartProcess(string[] arguments)
+        private Task StartProcess()
         {
             if (!_shouldBeStarted || !_process.Start())
-                return;
-
-            await _process.StandardInput.WriteAsync($"au {string.Join(" ", arguments)}").ConfigureAwait(false);
+                return Task.CompletedTask;
 
             _process.BeginOutputReadLine();
+
+            return Task.CompletedTask;
         }
 
         private static void KillProcessAndChildren(int pid)
