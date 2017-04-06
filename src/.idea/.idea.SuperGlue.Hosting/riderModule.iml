@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../../../.gitignore">
+      <sourceFolder url="file://$MODULE_DIR$/../../../.gitignore" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../build.cake">
+      <sourceFolder url="file://$MODULE_DIR$/../../../build.cake" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../build.ps1">
+      <sourceFolder url="file://$MODULE_DIR$/../../../build.ps1" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../paket.dependencies">
+      <sourceFolder url="file://$MODULE_DIR$/../../../paket.dependencies" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../paket.lock">
+      <sourceFolder url="file://$MODULE_DIR$/../../../paket.lock" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../CommonAssemblyInfo.cs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Shared/EnvironmentExtensions.cs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Shared/LogExtensions.cs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Shared/RunAppFunc.cs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Shared/WebChainExtensions.cs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Shared/WebHostExtensions.cs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../SuperGlue.Hosting.Aurelia" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../SuperGlue.Hosting.FastCgi" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../SuperGlue.Hosting.Katana" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../SuperGlue.Installers.TopShelf" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../SuperGlue.Hosting.Aurelia/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../SuperGlue.Hosting.Aurelia/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../SuperGlue.Hosting.FastCgi/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../SuperGlue.Hosting.FastCgi/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../SuperGlue.Hosting.Katana/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../SuperGlue.Hosting.Katana/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../SuperGlue.Installers.TopShelf/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../SuperGlue.Installers.TopShelf/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../packages" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
