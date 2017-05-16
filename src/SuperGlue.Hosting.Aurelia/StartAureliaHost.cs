@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management;
-using System.Reflection;
 using System.Threading.Tasks;
 using SuperGlue.Configuration;
 
@@ -19,7 +18,10 @@ namespace SuperGlue.Hosting.Aurelia
 
         public Task Start(AppFunc chain, IDictionary<string, object> settings, string environment, string[] arguments)
         {
-            var location = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "app");
+            var location = Path.Combine(Directory.GetCurrentDirectory(), "app");
+
+            settings.Log("Starting aurelia host for environment: \"{0}\", location: \"{1}\", arguments: \"{2}\"",
+                LogLevel.Debug, environment, location, string.Join(" ", arguments));
 
             var startInfo = new ProcessStartInfo("cmd.exe", $"/C au {string.Join(" ", arguments)}")
             {
